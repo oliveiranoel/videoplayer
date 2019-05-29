@@ -59,3 +59,25 @@ class MVideo
     }
 }
 
+class MPlaylist
+{
+    private $pid;
+    private $name;
+    
+    public function __construct ( int $pid, string $name)
+    {
+        $this->pid = $pid;
+        $this->name = $name;
+    }
+    
+    public function gePid ()
+    {
+        return $this->pid;
+    }
+    
+    public function getName ()
+    {
+        return $this->name;
+    }
+}
+

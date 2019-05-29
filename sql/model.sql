@@ -22,7 +22,7 @@ USE `videoplayer` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `videoplayer`.`playlist` (
   `pid` INT(11) NOT NULL AUTO_INCREMENT,
-  `plname` VARCHAR(255) NOT NULL,
+  `name` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`pid`))
 ENGINE = InnoDB;
 
@@ -77,8 +77,21 @@ CREATE TABLE IF NOT EXISTS `videoplayer`.`rating` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-INSERT INTO `video` (title, video, thumbnail, duration) VALUES("Sample", LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\img\\SampleVideo1.mp4"), NULL, NULL);  
+INSERT INTO `video` (title, video, thumbnail, duration) VALUES("Random", LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\img\\Video1.mp4"), LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\img\\Thumbnail1.png"), 105);  
+INSERT INTO `video` (title, video, thumbnail, duration) VALUES("Nature 2", LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\img\\Video2.mp4"), LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\img\\Thumbnail2.png"), 23);  
+INSERT INTO `video` (title, video, thumbnail, duration) VALUES("Nature 3", LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\img\\Video3.mp4"), LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\img\\Thumbnail3.png"), 6);  
+INSERT INTO `video` (title, video, thumbnail, duration) VALUES("Car 1", LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\img\\Video4.mp4"), LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\img\\Thumbnail4.png"), 74);  
+INSERT INTO `video` (title, video, thumbnail, duration) VALUES("Car 2", LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\img\\Video5.mp4"), LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\img\\Thumbnail5.png"), 71);  
 
+INSERT INTO `playlist` (name) VALUES("Random");  
+INSERT INTO `playlist` (name) VALUES("Nature");
+INSERT INTO `playlist` (name) VALUES("Car");
+
+INSERT INTO `playlist_has_video` (pid, vid) VALUES(1, 1);
+INSERT INTO `playlist_has_video` (pid, vid) VALUES(2, 2);
+INSERT INTO `playlist_has_video` (pid, vid) VALUES(2, 3);
+INSERT INTO `playlist_has_video` (pid, vid) VALUES(3, 4);
+INSERT INTO `playlist_has_video` (pid, vid) VALUES(3, 5);
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

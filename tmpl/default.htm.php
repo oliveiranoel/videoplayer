@@ -22,7 +22,7 @@
     
         <?php $nav ? include( Config::PATH_TEMPLATE . 'navigation.htm.php' ) : null; ?>
         
-        <main role="main" class="inner cover">
+        <main role="main" class="inner">
         	<?php FileUtil::exists( $template ) ? include( $template ) : null; ?>
         </main>
         

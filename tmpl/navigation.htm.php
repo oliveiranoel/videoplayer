@@ -1,4 +1,4 @@
-<header class="masthead mb-auto">
+<header class="masthead">
     <div class="inner">
         <h3 class="masthead-brand">Cover</h3>
         <nav class="nav nav-masthead justify-content-center">
@@ -7,3 +7,4 @@
             <a class="nav-link <?php NavUtil::isActive( $webroot . "player2" )?>" href="<?php echo $webroot . "player2"?>">Player 2</a>
         </nav>
     </div>
+</header>

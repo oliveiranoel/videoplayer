@@ -1,13 +1,11 @@
 <?php 
-    $videos = Provider::getVideos();
+    $video = Provider::getVideo();
 ?>
 
-<h1>Player 1</h1>
-
-<div class="container">
-    <video class="w-100 h-100" autoplay controls>
-        <source src="<?php echo $webroot . Config::PATH_IMAGE . "SampleVideo1.mp4" ?>" type="video/mp4">
+<div content="Content-Type: video/mp4">
+    <!-- poster="image" preload="metadata" -->
+    <video controls autoplay muted style="max-width: 95%;">
+        <source src="data:video/mp4;base64,<?php echo base64_encode($video) ?> "/>
     </video>
 </div>
-
 
