@@ -16,10 +16,11 @@
 class Provider
 {
 
-    public static function getVideo($id)
+    public static function getVideo($vid)
     {
-        $result = QueryUtil::select("SELECT * FROM video WHERE vid = '" . $id )[0];
-        return $result->video;
+        return Mapper::mapVideo($vid);
+        //$result = QueryUtil::select("SELECT * FROM video WHERE vid = ' $id '" )[0];
+        //return $result->video;
     }
     
     public static function getVideos()
@@ -30,6 +31,11 @@ class Provider
     public static function getPlaylists()
     {
         return Mapper::mapPlaylists();
+    }
+    
+    public static function getPlaylistVideoAssign() 
+    {
+        return Mapper::mapPlaylistVideoAssign();
     }
     
     // public static function getRoom ( $roomid )
@@ -70,14 +76,25 @@ class Mapper
         return $data;
     }
     
-    // public static function mapVideo ( $vid )
-    // {
-    // $record = QueryUtil::select( "SELECT * FROM room WHERE roomid = $roomid" )[ 0 ];
-    // if ( !empty( $record ) )
-    // {
-    // $data = new MRoom( $record->roomid, $record->number, $record->description );
-    // return $data;
-    // }
-    // return false;
-    // }
+    public static function mapVideo ( $vid )
+    {
+        $record = QueryUtil::select( "SELECT * FROM video WHERE vid = ' $vid '" )[ 0 ];
+        if ( !empty( $record ) )
+        {
+            $data = new MVideo( $record->vid, $record->title, $record->video, $record->thumbnail, $record->duration  );
+            return $data;
+        }
+        return false;
+    }
+    
+    public static function mapPlaylistVideoAssign () 
+    {
+        $data = [];
+        
+        foreach (QueryUtil::select("SELECT * FROM playlist_has_video") as $record) {
+            $data[] = new MPlaylistVideoAssign($record->pid, $record->vid);
+        }
+        
+        return $data;
+    }
 }

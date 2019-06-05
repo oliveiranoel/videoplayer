@@ -21,15 +21,15 @@ class MVideo
     private $vid;
     private $title;
     private $video;
-    private $tumbnail;
+    private $thumbnail;
     private $duration;
 
-    public function __construct ( int $vid, string $title, $video, $tumbnail, $duration)
+    public function __construct ( int $vid, string $title, $video, $thumbnail, $duration)
     {
         $this->vid = $vid;
         $this->title = $title;
         $this->video = $video;
-        $this->tumbnail = $tumbnail;
+        $this->thumbnail = $thumbnail;
         $this->duration = $duration;
     }
 
@@ -50,7 +50,7 @@ class MVideo
     
     public function getThumbnail ()
     {
-        return $this->tumbnail;
+        return $this->thumbnail;
     }
     
     public function getDuration ()
@@ -63,11 +63,13 @@ class MPlaylist
 {
     private $pid;
     private $name;
+    private $thumbnail;
     
-    public function __construct ( int $pid, string $name)
+    public function __construct ( int $pid, string $name, $thumbnail)
     {
         $this->pid = $pid;
         $this->name = $name;
+        $this->thumbnail = $thumbnail;
     }
     
     public function gePid ()
@@ -78,6 +80,33 @@ class MPlaylist
     public function getName ()
     {
         return $this->name;
+    }
+
+    public function getThumbnail ()
+    {
+        return $this->thumbnail;
+    }
+}
+
+class MPlaylistVideoAssign
+{
+    private $pid;
+    private $vid;
+    
+    public function __construct ( int $pid, int $vid)
+    {
+        $this->pid = $pid;
+        $this->vid = $vid;
+    }
+    
+    public function gePid ()
+    {
+        return $this->pid;
+    }
+    
+    public function getVid ()
+    {
+        return $this->vid;
     }
 }
 

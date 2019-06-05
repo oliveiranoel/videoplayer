@@ -19,6 +19,11 @@ RouteService::add( '/player2', function ()
     Renderer::default( "Player 2", "player2/player.htm.php" );
 } );
 
+
+RouteService::add( '/playlist', function ()
+{
+    Renderer::default( "Playlist", "playlist/playlist.htm.php", null, null, "../js/jwplayer/jwplayer-7.11.2/jwplayer.js" );
+} );
 /**
  * ***********************************************************************************************************
  * REWRITE

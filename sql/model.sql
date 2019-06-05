@@ -23,6 +23,7 @@ USE `videoplayer` ;
 CREATE TABLE IF NOT EXISTS `videoplayer`.`playlist` (
   `pid` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NOT NULL,
+  `thumbnail` LONGBLOB NOT NULL,
   PRIMARY KEY (`pid`))
 ENGINE = InnoDB;
 
@@ -77,15 +78,15 @@ CREATE TABLE IF NOT EXISTS `videoplayer`.`rating` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-INSERT INTO `video` (title, video, thumbnail, duration) VALUES("Random", LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\img\\Video1.mp4"), LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\img\\Thumbnail1.png"), 105);  
-INSERT INTO `video` (title, video, thumbnail, duration) VALUES("Nature 2", LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\img\\Video2.mp4"), LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\img\\Thumbnail2.png"), 23);  
-INSERT INTO `video` (title, video, thumbnail, duration) VALUES("Nature 3", LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\img\\Video3.mp4"), LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\img\\Thumbnail3.png"), 6);  
-INSERT INTO `video` (title, video, thumbnail, duration) VALUES("Car 1", LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\img\\Video4.mp4"), LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\img\\Thumbnail4.png"), 74);  
-INSERT INTO `video` (title, video, thumbnail, duration) VALUES("Car 2", LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\img\\Video5.mp4"), LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\img\\Thumbnail5.png"), 71);  
+INSERT INTO `video` (title, video, thumbnail, duration) VALUES("Random", LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\assets\\Video1.mp4"), LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\assets\\Thumbnail1.png"), 105);  
+INSERT INTO `video` (title, video, thumbnail, duration) VALUES("Nature 2", LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\assets\\Video2.mp4"), LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\assets\\Thumbnail2.png"), 23);  
+INSERT INTO `video` (title, video, thumbnail, duration) VALUES("Nature 3", LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\assets\\Video3.mp4"), LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\assets\\Thumbnail3.png"), 6);  
+INSERT INTO `video` (title, video, thumbnail, duration) VALUES("Car 1", LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\assets\\Video4.mp4"), LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\assets\\Thumbnail4.png"), 74);  
+INSERT INTO `video` (title, video, thumbnail, duration) VALUES("Car 2", LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\assets\\Video5.mp4"), LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\assets\\Thumbnail5.png"), 71);  
 
-INSERT INTO `playlist` (name) VALUES("Random");  
-INSERT INTO `playlist` (name) VALUES("Nature");
-INSERT INTO `playlist` (name) VALUES("Car");
+INSERT INTO `playlist` (name, thumbnail) VALUES("Random", LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\assets\\random.png"));  
+INSERT INTO `playlist` (name, thumbnail) VALUES("Nature", LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\assets\\nature.png"));
+INSERT INTO `playlist` (name, thumbnail) VALUES("Car", LOAD_FILE("C:\\xampp\\htdocs\\videoplayer\\assets\\cars.png"));
 
 INSERT INTO `playlist_has_video` (pid, vid) VALUES(1, 1);
 INSERT INTO `playlist_has_video` (pid, vid) VALUES(2, 2);
