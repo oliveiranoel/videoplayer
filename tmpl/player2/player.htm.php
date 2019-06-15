@@ -2,6 +2,7 @@
     $video = Provider::getVideo(1);
 ?>
 
+<!-- jwplayer doesnt works anymore, issues with blobs. Will not be graded, discussed with Mr. Mosimann -->
 <div content="Content-Type: video/mp4">
     <video src="assets/video1.mp4" id="container"></video> 
     <script type="text/javascript"> 

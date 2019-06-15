@@ -70,7 +70,7 @@ class Mapper
         $data = [];
         
         foreach (QueryUtil::select("SELECT * FROM playlist") as $record) {
-            $data[] = new MPlaylist($record->pid, $record->name);
+            $data[] = new MPlaylist($record->pid, $record->name, $record->thumbnail);
         }
 
         return $data;
