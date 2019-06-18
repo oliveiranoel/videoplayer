@@ -8,7 +8,7 @@
 
 /**
  *
- * @author dsu, nol
+ * @author nol
  *
  * Utitily for database.
  * Main purpose is to create the connection

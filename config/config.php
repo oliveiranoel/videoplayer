@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @author N. Oliveira & D. Suter
+ * @author N. Oliveira
  *
  * Konfigurationsdatei.
  */
 class Config
-{
+{     
     const BASEPATH = '/videoplayer';
     
     // PATH
@@ -22,7 +22,7 @@ class Config
     const SQL_DATABASE = 'videoplayer';
     
     // FEATURE TOGGLE
-    const LOCKDOWN = false;
+    const HTMLPlayer = true;
 }
 
 

@@ -66,7 +66,7 @@ class Renderer
     {
         foreach ( (array) $scripts as $script )
         {
-            echo "<script src='" . Config::PATH_JS . "$script'></script>";
+            echo "<script src='" . self::$root . Config::PATH_JS . "$script'></script>";
         }
     }
 }

@@ -19,8 +19,6 @@ class Provider
     public static function getVideo($vid)
     {
         return Mapper::mapVideo($vid);
-        //$result = QueryUtil::select("SELECT * FROM video WHERE vid = ' $id '" )[0];
-        //return $result->video;
     }
     
     public static function getVideos()
@@ -38,10 +36,10 @@ class Provider
         return Mapper::mapPlaylistVideoAssign();
     }
     
-    // public static function getRoom ( $roomid )
-    // {
-    // return self::handle( Mapper::mapRoom( $roomid ) );
-    // }
+    public static function getVideosForPlaylist($pid)
+    {
+        return Mapper::mapVideosForPlaylist($pid);
+    }
 }
 
 /**
@@ -96,5 +94,21 @@ class Mapper
         }
         
         return $data;
+    }
+    
+    public static function mapVideosForPlaylist($pid)
+    {        
+        $videosInPlaylist = [];
+        $videos = [];
+        
+        foreach (QueryUtil::select("SELECT * FROM playlist_has_video WHERE pid = ' $pid '") as $record) {
+            $videosInPlaylist[] = new MPlaylistVideoAssign($record->pid, $record->vid);
+        }
+        
+        foreach ($videosInPlaylist as $videoInPlaylist) {
+            $videos[] = self::mapVideo($videoInPlaylist->getVid());
+        }
+        
+        return $videos;
     }
 }

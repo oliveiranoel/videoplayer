@@ -2,7 +2,7 @@
 
 /**
  * 
- * @author dsu, nol
+ * @author nol
  * 
  * The Logger is used to log messages to the dev console.
  *

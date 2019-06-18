@@ -13,8 +13,6 @@
  *
  * @author nol
  *
- * Represents a room
- *
  */
 class MVideo
 {
@@ -33,7 +31,7 @@ class MVideo
         $this->duration = $duration;
     }
 
-    public function geVid ()
+    public function getVid ()
     {
         return $this->vid;
     }
@@ -72,7 +70,7 @@ class MPlaylist
         $this->thumbnail = $thumbnail;
     }
     
-    public function gePid ()
+    public function getPid ()
     {
         return $this->pid;
     }
@@ -93,13 +91,13 @@ class MPlaylistVideoAssign
     private $pid;
     private $vid;
     
-    public function __construct ( int $pid, int $vid)
+    public function __construct ( $pid, $vid)
     {
         $this->pid = $pid;
         $this->vid = $vid;
     }
     
-    public function gePid ()
+    public function getPid ()
     {
         return $this->pid;
     }
