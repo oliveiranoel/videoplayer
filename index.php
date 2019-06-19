@@ -14,7 +14,7 @@ foreach ( glob( Config::PATH_PHP . '*.php' ) as $file )
 
 include_once 'config/routing.php';
 
-shell_exec( "mysql --user=". Config::SQL_USER ." --password=". Config::SQL_PASSWORD ." < D:/xampp/htdocs/videoplayer/sql/model.sql" );
+shell_exec( "mysql --user=". Config::SQL_USER ." --password=". Config::SQL_PASSWORD ." < C:/xampp/htdocs/videoplayer/sql/model.sql" );
 
 DBUtil::connect( Config::SQL_DATABASE, Config::SQL_USER, Config::SQL_PASSWORD );
 RouteService::run();
