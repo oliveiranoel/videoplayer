@@ -18,7 +18,7 @@ Um das Programm vorerst überhaupt laufen zu lassen, müssen vorgängig einige Para
 	* max_allowed_packet = 1000M
 	* innodb_log_file_size = 1000M
 
-Da das Datenbankseeding eine Vorgabe, schlage ich hier 3 verschiedene Methoden vor, um die Datenbank inkl. Daten zu erstellen.
+Da das Datenbankseeding eine Vorgabe, schlage ich hier 2 verschiedene Methoden vor, um die Datenbank inkl. Daten zu erstellen.
 
 Überprüfen sie in beiden Fällen, dass die Pfade zu ihrem XAMPP Ordner in der SQL Datei korrekt sind, da ansonsten die Applikation nicht richtig funktionieren kann.
 
@@ -35,11 +35,6 @@ Da das Datenbankseeding eine Vorgabe, schlage ich hier 3 verschiedene Methoden v
 2. Gehen Sie auf Importieren
 3. Klicken Sie auf Datei auswählen und wähle Sie die Datei in ihrem Explorer aus
 4. Klicken Sie unten links auf Ok
-
-###### Methode 3: Automatisch über Code (geht nur, wenn MySQL über Windows CMD bedient werden kann
-Sofern Sie mit CMD MySQL bedienen können, wird beim Start der Applikation die Datenbank inkl. Daten automatisch erstellt. 
-
-
 
 
 Anschliessend können Sie die Applikation unter [localhost/videoplayer](http://localhost/videoplayer) starten

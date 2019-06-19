@@ -12,11 +12,11 @@ RouteService::add( '/htmlPlayer/playlist/([0-9]*)/video', function ( $pid )
     RouteService::redirect('/htmlPlayer/playlist/' . $pid . '/video/' . $firstVideoInPlaylist);
 } );
 
-RouteService::add( '/jwPlayer/playlist/([0-9]*)/video', function ( $pid )
+RouteService::add( '/videoJS/playlist/([0-9]*)/video', function ( $pid )
 {
     $videos = Provider::getVideosForPlaylist($pid);
     $firstVideoInPlaylist = $videos[0]->getVid();
-    RouteService::redirect('/jwPlayer/playlist/' . $pid . '/video/' . $firstVideoInPlaylist);
+    RouteService::redirect('/videoJS/playlist/' . $pid . '/video/' . $firstVideoInPlaylist);
 } );
 
 RouteService::add( '/htmlPlayer/playlist/([0-9]*)/video/([0-9]*)', function ( $pid, $vid )
@@ -45,7 +45,7 @@ RouteService::add( '/htmlPlayer/playlist/([0-9]*)/video/([0-9]*)', function ( $p
     ]);
 } );
 
-RouteService::add( '/jwPlayer/playlist/([0-9]*)/video/([0-9]*)', function ( $pid, $vid )
+RouteService::add( '/videoJS/playlist/([0-9]*)/video/([0-9]*)', function ( $pid, $vid )
 {
     $views = QueryUtil::select("SELECT views FROM video WHERE vid = $vid");
     $views[0]->views++;
@@ -62,12 +62,12 @@ RouteService::add( '/jwPlayer/playlist/([0-9]*)/video/([0-9]*)', function ( $pid
         Logger::error($e);
     }
     
-    Renderer::default( "JW Player", "jwPlayer/player.htm.php", [
+    Renderer::default( "Video JS", "videoJS/player.htm.php", [
             "pid" => $pid,
             "vid" => $vid,
             "views" => $views[0]->views,
             "rating" => $rating[0]->rating
-    ], null, "jwplayer/jwplayer-7.11.2/jwplayer.js" );
+    ] );
 } );
 
 RouteService::add( '/video/([0-9]*)/rate/([0-9]*)', function ( $vid, $rating )

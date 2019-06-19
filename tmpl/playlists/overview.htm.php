@@ -6,7 +6,7 @@
     if (Config::HTMLPlayer) {
         $activePlayer = "htmlPlayer";
     } else {
-        $activePlayer = "jwPlayer";
+        $activePlayer = "videoJS";
     }
 ?>
 
