@@ -23,14 +23,14 @@ Da das Datenbankseeding eine Vorgabe, schlage ich hier 2 verschiedene Methoden v
 Überprüfen sie in beiden Fällen, dass die Pfade zu ihrem XAMPP Ordner in der SQL Datei korrekt sind, da ansonsten die Applikation nicht richtig funktionieren kann.
 
 
-###### Methode 1: Manuell über XAMPP Shell
+###### Methode 1: Über XAMPP Shell
 1. Öffnen Sie die Shell Konsole
 2. Geben Sie folgenden Befehl ein, um die Datenbank zu erstellen
 
 
 	* mysql -u root -p < C:\xampp\htdocs\videoplayer\sql\model.sql
 	
-###### Methode 2: Manuell über phpmyadmin
+###### Methode 2: Über phpmyadmin
 1. Öffnen Sie phpmyadmin
 2. Gehen Sie auf Importieren
 3. Klicken Sie auf Datei auswählen und wähle Sie die Datei in ihrem Explorer aus
@@ -44,8 +44,8 @@ Anschliessend können Sie die Applikation unter [localhost/videoplayer](http://lo
 
 ## Fazit
 ###### Erreicht
-Ich konnte den HTMLPlayer wie verlangt implementieren. Dieser funktioniert ohne jegliche Probleme. Auch auf die Benutzerfreundlichkeit und Gestaltung habe ich Wert gelegt. Ausserdem habe ich 2 Optionen zusätzlich implementiert. Diesen sind das Anzeigen der Views und die Bewertung eines Videos.
+Ich konnte den HTMLPlayer wie verlangt implementieren. Dieser funktioniert ohne jegliche Probleme. Auch auf die Benutzerfreundlichkeit und Gestaltung habe ich Wert gelegt. Ausserdem habe ich 3 Optionen zusätzlich implementiert. Diesen sind das Anzeigen der Views, die Bewertung eines Videos und das automatische abspielen der Videos.
 Der Player kann über einen Konstante in der Config verändert werden. Deshalb sind das Anzeigen der Playlists und der einzelnen Videos unabhängig vom Player.
 
 ###### Nicht erreicht
-Da der JWPlayer mit Videos aus der DB nicht gut umgehen kann, konnte ich diesen auch aus zeitliche Gründen nicht fertig implementieren. Jedoch ist es auch nicht empfehlenswert, Dateien wie z.B. Videos oder Fotos in einer MySQL Datenbank abzuspeichern. Hierfür würde man lieber eine Datenablage verwenden.
+-

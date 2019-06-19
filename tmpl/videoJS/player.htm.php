@@ -20,15 +20,15 @@
                         if ($i <= $rating) {
                 	    ?>
                 	    <a href="<?php echo $webroot?>video/<?php echo $vid?>/rate/<?php echo $i?>" role="button">
-                	       <span style="margin-left: 4%" class="float-left glyphicon glyphicon-star"></span>
+                	       <span style="margin-left: 2%" class="float-left glyphicon glyphicon-star"></span>
                 	    </a>
                 	    <?php } else { ?>
             	        <a href="<?php echo $webroot?>video/<?php echo $vid?>/rate/<?php echo $i?>" role="button">
-            	        	<span style="margin-left: 4%" class="float-left glyphicon glyphicon-star-empty"></span>
+            	        	<span style="margin-left: 2%" class="float-left glyphicon glyphicon-star-empty"></span>
             	        </a>
                 	   	<?php }	}?>
                 	   	
-                <h7 class="float-right" style="margin-right: 4%;"><span class="glyphicon glyphicon-time"></span><?php echo "  " . gmdate("i:s", $video->getDuration()) ?></h7>
+                <h7 class="float-right" style="margin-right: 6%;"><span class="glyphicon glyphicon-time"></span><?php echo "  " . gmdate("i:s", $video->getDuration()) ?></h7>
                 <h7 class="float-right" style="margin-right: 3%;"><span class="glyphicon glyphicon-eye-open"></span><?php echo "  " . $views ?></h7>
             	<br><br>
     		</div>
